@@ -25,6 +25,20 @@ function updateTime() {
       "h:mm:ss[<small>]a[</small>]"
     );
   }
+
+  // Mexico City
+
+  let mexicoCityElement = document.querySelector("#mexico-city");
+  if (mexicoCityElement) {
+    let mexicoCityDateElement = mexicoCityElement.querySelector(".date");
+    let mexicoCityTimeElement = mexicoCityElement.querySelector(".time");
+    let mexicoCityTime = moment().tz("America/Mexico_City");
+
+    mexicoCityDateElement.innerHTML = mexicoCityTime.format("MMMM Do YYYY");
+    mexicoCityTimeElement.innerHTML = mexicoCityTime.format(
+      "h:mm:ss[<small>]a[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
